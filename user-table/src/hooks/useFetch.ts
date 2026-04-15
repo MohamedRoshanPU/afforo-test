@@ -48,13 +48,14 @@ export function useFetch<T>(url: string) {
 
         setState({
           data: null,
-          error: error instanceof Error ? error.message : "Something went wrong",
+          error:
+            error instanceof Error ? error.message : "Something went wrong",
           loading: false,
         });
       }
     }
 
-    void load();
+    load();
 
     return () => {
       isActive = false;
