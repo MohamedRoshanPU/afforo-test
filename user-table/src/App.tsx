@@ -6,6 +6,8 @@ import type { User } from "@/types/user";
 type SortDirection = "desc" | "asc" | null;
 
 const usersApiUrl = "https://jsonplaceholder.typicode.com/users";
+const controlClassName =
+  "h-11 w-full rounded-xl border border-border bg-white px-4 outline-none transition focus:border-[#93c5fd] focus:ring-4 focus:ring-[#dbeafe]";
 
 function getInitialSearchTerm() {
   return new URLSearchParams(window.location.search).get("search") ?? "";
@@ -143,7 +145,7 @@ export default function App() {
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
                 placeholder="Search by name or email"
-                className="h-11 w-full rounded-xl border border-border bg-white px-4 outline-none transition"
+                className={controlClassName}
               />
             </div>
 
@@ -158,7 +160,7 @@ export default function App() {
                 id="city"
                 value={selectedCity}
                 onChange={(event) => setSelectedCity(event.target.value)}
-                className="h-11 w-full rounded-xl border border-border bg-white px-4 outline-none transition"
+                className={controlClassName}
               >
                 <option value="all">All cities</option>
                 {cities.map((city) => (
